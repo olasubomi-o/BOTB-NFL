@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 //import { StatusBar } from 'expo-status-bar';
 import { View, Text, StyleSheet} from 'react-native';
@@ -34,10 +35,24 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ highScores }) => {
 };
 
 export default Leaderboard;
+=======
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function Leaderboard() {
+  return (
+    <View style={styles.container}>
+      <Text>Leaderboard</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+>>>>>>> 43c2358b43b9c9f365bfc11a2464cea4df49d062
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+<<<<<<< HEAD
     padding: 20,
     backgroundColor: '#fff',
   },
@@ -66,3 +81,10 @@ const styles = StyleSheet.create({
   },
 });
 
+=======
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+>>>>>>> 43c2358b43b9c9f365bfc11a2464cea4df49d062
