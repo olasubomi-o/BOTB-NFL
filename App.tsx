@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import BottomTabNav from './navigation/bottomTab';
+import Play2play from './src/play2play';
 import Leaderboard from './src/leaderboard';
 import Rewards from './src/rewards';
 import PlaySelect from './src/selectPlay';
@@ -18,9 +19,15 @@ export default function App() {
               name="BottomTabNav"
               component={BottomTabNav}
               options={{ headerShown: false }}
-
               
       />
+        <Stack.Screen
+              name="Play2Play"
+              component={Play2play}
+              options={{ headerShown: false }}
+              
+      />
+    
     
       </Stack.Navigator>
     </NavigationContainer>
