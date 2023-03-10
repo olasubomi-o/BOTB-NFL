@@ -5,6 +5,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import BottomTabNav from './navigation/bottomTab';
 import Play2play from './src/play2play';
+import Playbyplay from './src/playbyplay';
+import Foul from './src/foul';
 import Leaderboard from './src/leaderboard';
 import Rewards from './src/rewards';
 import PlaySelect from './src/selectPlay';
@@ -24,8 +26,17 @@ export default function App() {
         <Stack.Screen
               name="Play2Play"
               component={Play2play}
-              options={{ headerShown: false }}
-              
+              options={{ headerShown: false }}  
+      />
+      <Stack.Screen
+              name="PlaybyPlay"
+              component={Playbyplay}
+              options={{ headerShown: false }}  
+      />
+      <Stack.Screen
+              name="Foul"
+              component={Foul}
+              options={{ headerShown: false }}  
       />
     
     

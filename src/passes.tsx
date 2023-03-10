@@ -2,9 +2,9 @@ import { Button, ListItem, Divider } from '@rneui/themed';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FlatList } from 'react-native';
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 
 
@@ -15,20 +15,22 @@ const [runexpanded, setRunExpanded] = React.useState(false);
 const [kickexpanded, setKickExpanded] = React.useState(false);
 
 const navigation = useNavigation();
+const route = useRoute();
 
    
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <>
       <ListItem.Accordion
+      bottomDivider
         content={
-          <ListItem.Content>
+          <ListItem.Content >
             <ListItem.Title style={{fontSize:20, fontWeight:'bold', marginBottom:10}}>Make a pass call</ListItem.Title>
-            <ListItem.Subtitle>What pass call will coach make?</ListItem.Subtitle>
-            <Divider />
+            <ListItem.Subtitle>Find out players involved in a pass call</ListItem.Subtitle>
           </ListItem.Content>
           
         }
+        
         isExpanded={passexpanded}
         onPress={() => {
           setPassExpanded(!passexpanded);
@@ -36,21 +38,10 @@ const navigation = useNavigation();
       >
         <ListItem>
           <ListItem.Content>
-            <ListItem.Title style={{fontSize:20, fontWeight:'bold', marginBottom:10}}>Forward Pass</ListItem.Title>
-            <ListItem.Subtitle>Historically, Coach Jones played a forward pass every 4th down with Juju off the field but since the signing of the young prospect Kyle Coach has been playing runs with him.</ListItem.Subtitle>
-            <Button
-               title="Select"
-               buttonStyle={{ backgroundColor: 'rgba(39, 39, 39, 1)' }}
-               containerStyle={{
-                 width: 150,
-                 marginHorizontal: 235,
-                 marginVertical: 20,
-               }}
-               titleStyle={{ color: 'white', marginHorizontal: 20 }}
-               onPress={()=>{
-                navigation.navigate('Play2Play')
-           }}
-            />
+            <ListItem.Title style={{fontSize:20, fontWeight:'bold', marginBottom:10}}>Patrick Mahomes - QB</ListItem.Title>
+            <ListItem.Subtitle>Height: 6'2, Weight: 220Ibs, Success pass rate: 80%,
+                Health score: 50%, Injury alert: Sprained Ankle
+            </ListItem.Subtitle>
             <View style={{marginBottom:10}}>
             <Divider />
             </View>
@@ -58,10 +49,11 @@ const navigation = useNavigation();
         </ListItem>
         <ListItem>
           <ListItem.Content>
-            <ListItem.Title style={{fontSize:20, fontWeight:'bold', marginBottom:10}}>Slant Pass</ListItem.Title>
-            <ListItem.Subtitle>With the newly signed reciever, Coach has been playing more slant plays than he usually does but the opponent have amazing pass coverage.</ListItem.Subtitle>
+            <ListItem.Title style={{fontSize:20, fontWeight:'bold', marginBottom:10}}>Travis Kelce</ListItem.Title>
+            <ListItem.Subtitle>Height: 6'2, Weight: 220Ibs, Success pass rate: 80%,
+                Health score: 70%, Injury alert: None</ListItem.Subtitle>
             <Button
-               title="Select"
+               title="Pass Play"
                buttonStyle={{ backgroundColor: 'rgba(39, 39, 39, 1)' }}
                containerStyle={{
                  width: 150,
@@ -70,17 +62,18 @@ const navigation = useNavigation();
                }}
                titleStyle={{ color: 'white', marginHorizontal: 20 }}
                onPress={()=>{
-                navigation.navigate('Play2Play')
+                navigation.navigate('Play2Play',{play:'Pass'})
            }}
             />
           </ListItem.Content>
         </ListItem>
       </ListItem.Accordion>
+
       <ListItem.Accordion
         content={
           <ListItem.Content>
             <ListItem.Title style={{fontSize:20, fontWeight:'bold', marginBottom:10}}>Make a run call</ListItem.Title>
-            <ListItem.Subtitle>What run call will coach make?</ListItem.Subtitle>
+            <ListItem.Subtitle>Find out players involved in a run call</ListItem.Subtitle>
             <Divider />
           </ListItem.Content>
           
@@ -92,8 +85,20 @@ const navigation = useNavigation();
       >
         <ListItem>
           <ListItem.Content>
-            <ListItem.Title style={{fontSize:20, fontWeight:'bold', marginBottom:10}}>Counter Run</ListItem.Title>
-            <ListItem.Subtitle>Historically, Coach Jones played a counter run every 3rd down with Jon Jon on the field.</ListItem.Subtitle>
+          <ListItem.Title style={{fontSize:20, fontWeight:'bold', marginBottom:10}}>Patrick Mahomes - QB</ListItem.Title>
+            <ListItem.Subtitle>Height: 6'2, Weight: 220Ibs, Success run rate: 80%,
+                Health score: 50%, Injury alert: Sprained Ankle
+            </ListItem.Subtitle>
+            <View style={{marginBottom:10}}>
+            <Divider />
+            </View>
+          </ListItem.Content>
+        </ListItem>
+        <ListItem>
+          <ListItem.Content>
+            <ListItem.Title style={{fontSize:20, fontWeight:'bold', marginBottom:10}}>Isiah Pacheco</ListItem.Title>
+            <ListItem.Subtitle>Height: 6'2, Weight: 220Ibs, Success run rate: 80%,
+                Health score: 70%, Injury alert: None</ListItem.Subtitle>
             <Button
                title="Select"
                buttonStyle={{ backgroundColor: 'rgba(39, 39, 39, 1)' }}
@@ -104,33 +109,14 @@ const navigation = useNavigation();
                }}
                titleStyle={{ color: 'white', marginHorizontal: 20 }}
                onPress={()=>{
-                    navigation.navigate('Play2Play')
+                navigation.navigate('Play2Play',{play:'Run'})
                }}
-            />
-            <View style={{marginBottom:10}}>
-            <Divider />
-            </View>
-          </ListItem.Content>
-        </ListItem>
-        <ListItem>
-          <ListItem.Content>
-            <ListItem.Title style={{fontSize:20, fontWeight:'bold', marginBottom:10}}>Slant Pass</ListItem.Title>
-            <ListItem.Subtitle>With the newly signed reciever, Coach has been playing more slant plays than he usually does but the opponent have amazing pass coverage.</ListItem.Subtitle>
-            <Button
-               title="Select"
-               buttonStyle={{ backgroundColor: 'rgba(39, 39, 39, 1)' }}
-               containerStyle={{
-                 width: 150,
-                 marginHorizontal: 235,
-                 marginVertical: 20,
-               }}
-               titleStyle={{ color: 'white', marginHorizontal: 20 }}
             />
           </ListItem.Content>
         </ListItem>
       </ListItem.Accordion>
     </>
-    </View>
+    </ScrollView>
 
   );
 }
