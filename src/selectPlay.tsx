@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, ScrollView } from 'react-native';
 import Passes from './passes';
 
 export default function PlaySelect() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style={styles.title}>Coach Moment - Play Coach!</Text>
       {/* <Text style={{ fontSize: 18,fontWeight: 'bold', margin:10, marginTop:30, marginLeft:22}}>Down: 3rd </Text>
       <Text style={{ fontSize: 18,fontWeight: 'bold', margin:10, marginTop:10, marginLeft:22}}>Distance: 8</Text>
@@ -13,7 +13,7 @@ export default function PlaySelect() {
     
       <Passes />
       <Image style={styles.image} source={require('../assets/andystart.png')} />
-    </View>
+    </ScrollView>
   );
 }
 
@@ -44,8 +44,7 @@ const styles = StyleSheet.create({
   image: {
     width: 250,
     height: 200,
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-  },
+    bottom: -190,
+    right: -160,
+  }
 });

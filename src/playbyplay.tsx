@@ -16,7 +16,7 @@ export default function Playbyplay() {
         source={require('../assets/play.mov')}
         style={styles.video}
         shouldPlay
-        resizeMode="cover"
+        resizeMode="contain"
         isLooping
       />
       <View style={styles.playByPlayContainer}>
@@ -28,11 +28,11 @@ export default function Playbyplay() {
           style={[styles.playByPlayText, styles.foul]}
           onAnimationEnd={() => setFoulAnimationFinished(true)}
         >
-          2:00 - Foul called against the eagles
+          2:00 - Flag called against the eagles
         </Animatable.Text>
         {foulAnimationFinished && (
           <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Foul')}>
-            <Text style={styles.buttonTitle}> Explain the foul</Text>
+            <Text style={styles.buttonTitle}> Explain the Flag</Text>
           </TouchableOpacity>
         )}
       </View>
@@ -46,9 +46,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   video: {
-    width: '100%',
-    height: '40%',
+    width: 250,
+    height: 250,
     marginTop: 20,
+    alignSelf: 'center',
   },
   playByPlayContainer: {
     marginTop: 20,

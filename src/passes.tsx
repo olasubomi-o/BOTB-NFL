@@ -100,7 +100,7 @@ const route = useRoute();
             <ListItem.Subtitle>Height: 6'2, Weight: 220Ibs, Success run rate: 80%,
                 Health score: 70%, Injury alert: None</ListItem.Subtitle>
             <Button
-               title="Select"
+               title="Run Play"
                buttonStyle={{ backgroundColor: 'rgba(39, 39, 39, 1)' }}
                containerStyle={{
                  width: 150,

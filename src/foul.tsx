@@ -8,6 +8,9 @@ import { Configuration, OpenAIApi } from 'openai';
 
 
 
+
+
+
 export default function Foul() {
     const navigation = useNavigation();
     const [holdingDefinition, setHoldingDefinition] = useState('Holding is a penalty that occurs when an offensive player grabs or holds onto a defender, preventing them from making a play on the ball or tackling the ball carrier. It results in a loss of yardage for the offending team and a replay of the down.');
@@ -16,7 +19,7 @@ export default function Foul() {
       };
     const five = async () => {
         const configuration = new Configuration({
-          apiKey: "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",
+          apiKey: "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",
         });
         const openai = new OpenAIApi(configuration);
         const response = await openai.createCompletion({
@@ -30,7 +33,7 @@ export default function Foul() {
 
       const soccer = async () => {
         const configuration = new Configuration({
-          apiKey: "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",
+          apiKey: "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",
         });
         const openai = new OpenAIApi(configuration);
         const response = await openai.createCompletion({
@@ -49,9 +52,9 @@ export default function Foul() {
       </TouchableOpacity>
       <Text style={styles.title}>NFL Rule expert</Text>
       <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 1, marginLeft: 18, marginTop:12 }}>
-  Foul on the field is an <Text style={{ fontStyle: 'italic', color: 'red' }}>holding foul</Text>
+  Foul on the field is an <Text style={{ fontStyle: 'italic', color: 'red' }}>holding flag</Text>
 </Text>
-      <Text style={{ fontSize: 18, fontWeight: 'bold', marginTop: 12, marginBottom: 10, marginLeft: 12 }}> What is a holding foul?</Text>
+      <Text style={{ fontSize: 18, fontWeight: 'bold', marginTop: 12, marginBottom: 10, marginLeft: 12 }}> What is a holding flag?</Text>
       <Text style={{margin:12, fontSize:16, lineHeight:23, marginLeft:23, marginBottom:20}}>{holdingDefinition}</Text>
       <View style={{ flexDirection: 'row' }}>
   <TouchableOpacity onPress={five} style={[styles.button, { marginRight: 0 }]}>
@@ -63,9 +66,10 @@ export default function Foul() {
 </View>
 
  <Video source={require('../assets/holding.mov')}
-        style={{ width: '100%',height: '30%', marginTop:15}}
+        style={{ width: 250,height: 250, marginTop:15, alignSelf: 'center',
+    }}
         shouldPlay
-        resizeMode="cover"
+        resizeMode="contain"
         isLooping />
       <Image source={require('../assets/Jeff.png')} style={styles.image} />
     </View>
