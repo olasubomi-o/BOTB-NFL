@@ -8,6 +8,9 @@ import { Configuration, OpenAIApi } from 'openai';
 
 
 
+
+
+
 export default function Foul() {
     const navigation = useNavigation();
     const [holdingDefinition, setHoldingDefinition] = useState('Holding is a penalty that occurs when an offensive player grabs or holds onto a defender, preventing them from making a play on the ball or tackling the ball carrier. It results in a loss of yardage for the offending team and a replay of the down.');
@@ -16,7 +19,7 @@ export default function Foul() {
       };
     const five = async () => {
         const configuration = new Configuration({
-          apiKey: "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",
+          apiKey: "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",
         });
         const openai = new OpenAIApi(configuration);
         const response = await openai.createCompletion({
@@ -30,7 +33,7 @@ export default function Foul() {
 
       const soccer = async () => {
         const configuration = new Configuration({
-          apiKey: "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",
+          apiKey: "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",
         });
         const openai = new OpenAIApi(configuration);
         const response = await openai.createCompletion({
