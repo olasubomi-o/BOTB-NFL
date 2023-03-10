@@ -1,27 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Passes from './passes';
 
 export default function PlaySelect() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Coach Moment - Play Coach!</Text>
-      <View style = {{flexDirection: "row"}}>
-      <TouchableOpacity>
-        <View style={styles.button}>
-            <Text>Pass</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <View style={styles.button}>
-            <Text>Run it</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <View style={styles.button}>
-            <Text>Rush</Text>
-        </View>
-      </TouchableOpacity>
-      </View>
+    
+      <Passes />
       
     </View>
   );
